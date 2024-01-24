@@ -46,7 +46,9 @@ const updateUserPassword = async (req, res) => {
     user.password = newPassword;
     await user.save(); // password is still hashed, because this method invokes the presave. which uses bcrypt
 
-  ;
+    res.status(StatusCodes.OK).json({msg: 'Password Updated Successfully' });
+    // res.send('update the password of a user...Jan 4th, 2024, 1259 hours');
+    // res.send(req.body);
 };
 
 module.exports = {
