@@ -17,4 +17,17 @@ const getAllProducts = async (req, res) => {
     // res.send('getAllProducts ... 1845 hours, Feb 9th, 2024');
 };
 
+const getSingleProduct = async (req, res) => {
+    const { id: productId } = req.params;
+
+    const product = await Product.findOne({ _id: productId });
+
+    if (!product){
+        throw new CustomError.NotFoundError(`No product with ID : ${productId}`);
+    }
+
+    res.status(StatusCodes.OK).json({ product });
+    // res.send('getSingleProduct ... 1845 hours, Feb 9th, 2024');
+};
+
 
