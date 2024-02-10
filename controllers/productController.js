@@ -30,4 +30,33 @@ const getSingleProduct = async (req, res) => {
     // res.send('getSingleProduct ... 1845 hours, Feb 9th, 2024');
 };
 
+const updateProduct = async (req, res) => {
+    const { id: productId } = req.params;
+
+    const product = await Product.findOneAndUpdate({ _id: productId }, req.body, {
+        new: true,
+        runValidators: true,
+    });
+
+    if (!product){
+        throw new CustomError.NotFoundError(`No product with ID : ${productId}`);
+    }
+
+    res.status(StatusCodes.OK).json({ product });
+    // res.send('updateProduct ... 1845 hours, Feb 9th, 2024');
+};
+
+const deleteProduct = async (req, res) => {
+    const { id: productId } = req.params;
+    const product = await Product.findOne({ _id: productId });
+
+    if (!product){
+        throw new CustomError.NotFoundError(`No product with ID : ${productId}`);
+    }
+    // if product does exist
+    await product.remove();
+
+    res.status(StatusCodes.OK).json({ mes: 'product removed successfully.' });
+    // res.send('deleteProduct ... 1845 hours, Feb 9th, 2024');
+};
 
