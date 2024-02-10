@@ -60,3 +60,15 @@ const deleteProduct = async (req, res) => {
     // res.send('deleteProduct ... 1845 hours, Feb 9th, 2024');
 };
 
+const uploadImage = async (req, res) => {
+    res.send('uploadImage ... 1845 hours, Feb 9th, 2024');
+};
+
+module.exports = {
+    createProducts,
+    getAllProducts,
+    getSingleProduct,
+    updateProduct,
+    deleteProduct,
+    uploadImage,
+}
