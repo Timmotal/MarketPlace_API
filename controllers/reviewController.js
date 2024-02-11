@@ -46,5 +46,15 @@ const updateReview = async (req, res) => {
     res.send('updateReview. Feb 10th, 2024, what are you running from, rejection?. course is taking way too long');
 };
 
+const deleteReview = async (req, res) => {
+    res.send('deleteReview. Feb 10th, 2024, what are you running from, rejection?. course is taking way too long');
+};
 
+module.exports = {
+    createReview,
+    getAllReviews,
+    getSingleReview,
+    updateReview,
+    deleteReview,
+};
 
