@@ -29,5 +29,11 @@ const createReview = async (req, res) => {
     res.status(StatusCodes.CREATED).json({ review });
     // res.send('createReview. Feb 10th, 2024, what are you running from, rejection?. course is taking way too long');
 };
-;
+
+const getAllReviews = async (req, res) => {
+    const reviews = await Review.find({});
+    // everytime, we have a list, it is useful for the frontend to have the count
+    res.status(StatusCodes.OK).json({ reviews, count: reviews,length });
+    // res.send('getAllReviews. Feb 10th, 2024, what are you running from, rejection?. course is taking way too long');
+};
 
