@@ -42,5 +42,9 @@ const getSingleReview = async (req, res) => {
     // res.send('getSingleReview. Feb 10th, 2024, what are you running from, rejection?. course is taking way too long');
 };
 
+const updateReview = async (req, res) => {
+    res.send('updateReview. Feb 10th, 2024, what are you running from, rejection?. course is taking way too long');
+};
+
 
 
