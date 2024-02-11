@@ -37,3 +37,10 @@ const getAllReviews = async (req, res) => {
     // res.send('getAllReviews. Feb 10th, 2024, what are you running from, rejection?. course is taking way too long');
 };
 
+const getSingleReview = async (req, res) => {
+    const { id: reviewId}  = req.params
+    // res.send('getSingleReview. Feb 10th, 2024, what are you running from, rejection?. course is taking way too long');
+};
+
+
+
